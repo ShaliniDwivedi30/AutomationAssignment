@@ -21,5 +21,5 @@ Feature: fedex assessment regression feature
 
     Examples:
       |userID    |  password |   title     |         url         |yourName|postalCode|
-      |Shalini123|shalini@123|HomePageTitle|ShipWithoutaccountURL|Shalini |1188lk    |
+      |userName|password|HomePageTitle|ShipWithoutaccountURL|Shalini |1188lk    |
 

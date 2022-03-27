@@ -26,7 +26,6 @@ Feature: fedex assessment home page
     Given user launch the fedex url
     Then user will get location modal
     When user clicks on english option from the location modal
-    #And click on back button from the ship manager page
     Then verify the user navigate to the login page
     And verify the login page details
 
@@ -40,7 +39,7 @@ Feature: fedex assessment home page
     And Enter the "<userID>" and "<password>" and clicks on login button
     Examples:
       |userID  |password|
-      |Shalini123|shalini@123|
+      |userName|password|
 
   #Test case 5 new user navigate to the login from the page and clicks on the forgot userid link
 @test5
@@ -72,7 +71,7 @@ Feature: fedex assessment home page
     Then user clicks on the reset password CTA and navigate to other page
     And clicks on the Retrive user ID CTA
 
-  # Test case 3 user navigate to the ShipManager lite page validate the url
+  # Test case 8 user navigate to the ShipManager lite page validate the url
 @test8
   Scenario Outline: New user ship without account page
     Given user launch the fedex url
@@ -87,7 +86,7 @@ Feature: fedex assessment home page
       |ShipWithoutaccountURL|
 
 
-# Test case 4 user navigate to the ShipManager lite page and enters the details
+# Test case 9 user navigate to the ShipManager lite page and enters the details
 @test9
   Scenario Outline: New user is in ship without account page and enter some details
     Given user launch the fedex url
@@ -100,7 +99,7 @@ Feature: fedex assessment home page
       |yourName|postalCode|
       |Shalini|1188lk |
 
-  #Test case 5 user navigate to the ShipManager lite page verification of country from the page
+  #Test case 10 user navigate to the ShipManager lite page verification of country from the page
 @test10
   Scenario Outline: New user ship in without account page and enters the country detail
     Given user launch the fedex url

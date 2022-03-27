@@ -61,7 +61,7 @@ public class loginPageStepDefination {
     }
 
     @And("Enter the {string} and {string} and clicks on login button")
-    public void enterTheAndAndClicksOnLoginButton(String arg0, String arg1) throws InterruptedException {
+    public void enterTheAndAndClicksOnLoginButton(String arg0, String arg1) throws InterruptedException, IOException {
 
         olopginpage=new loginPage();
         configFileReader=new ConfigFileReader();

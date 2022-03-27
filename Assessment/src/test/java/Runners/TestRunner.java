@@ -3,12 +3,12 @@ package Runners;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-
+//use the tags which are mentioned in the feature file as per the scenarios
 @CucumberOptions(features="src/main/resources/Features",
         glue= {"com/StepDefinations"},
-        tags = "@test4",
+        tags = "@Regression",
         monochrome = true,
-        plugin = { "pretty","html:target/Report/cucumber-reports.html", "json:target/Report/cucumber-report.json",
+        plugin = { "pretty","html:target/Report/tescasereport.html", "json:target/Report/testcasereport.json",
                  "junit:target/Report/cucumber-reports.xml"}
               )
 @RunWith(Cucumber.class)

@@ -3,6 +3,7 @@ package com.StepDefinations;
 import DataProvider.ConfigFileReader;
 import com.POM_PageObjectModel.HomePage;
 import com.POM_PageObjectModel.ShipWithoutAccountPage;
+import commonUtilities.takeScreenShotUtility;
 import io.cucumber.java.en.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +20,7 @@ public class shipWithoutAccountStepDefination{
     Logger log=Logger.getLogger(HomePageStepDefination.class.getName());
     HomePage oHomePage;
     ShipWithoutAccountPage oshipWithoutAccountPage;
-
+    takeScreenShotUtility screenshot;
     @When("user clicks on the Ship without account option from shipping services")
     public void userClicksOnTheShipWithoutAccountOptionFromShippingServices() throws InterruptedException {
         oHomePage=new HomePage();
@@ -60,6 +61,8 @@ public class shipWithoutAccountStepDefination{
         oshipWithoutAccountPage=new ShipWithoutAccountPage();
         Thread.sleep(3000);
         oshipWithoutAccountPage.countryList("India");
+        screenshot=new takeScreenShotUtility();
+        screenshot.captureScreenshot(driver,"loginPageafterdata");
     }
 
 
