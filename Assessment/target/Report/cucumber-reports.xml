@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="71.28">
+<testcase classname="fedex assessment regression feature" name="Fedex home page title verification" time="70.88">
+<system-out><![CDATA[Given user launch the fedex url.............................................passed
+Then user will get location modal...........................................passed
+When user clicks on english option from the location modal..................passed
+Then user will navigate to the fedex "HomePageTitle" home page..............passed
+Then verify the all services available on home page.........................passed
+Then verify the user navigate to the login page.............................passed
+And verify the login page details...........................................passed
+And Enter the "userName" and "password" and clicks on login button..........passed
+And clicks on the Forgot your user name or password link....................passed
+Then user clicks on the reset password CTA and navigate to other page.......passed
+And clicks on the Retrive user ID CTA.......................................passed
+Then click on the Shipping option from the login page.......................passed
+Then verify the "ShipWithoutaccountURL" of ship without account.............passed
+Then verify "Shalini" and "1188lk" fields from the ShipManager lite page....passed
+Then verify the "<country>"  field from the ShipManager lite page...........passed
+]]></system-out>
+</testcase>
+</testsuite>
