@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="31.29">
+<testcase classname="fedex assessment home page" name="New user try to login using the user name and password" time="30.825">
+<system-out><![CDATA[Given user launch the fedex url.............................................passed
+Then user will get location modal...........................................passed
+When user clicks on english option from the location modal..................passed
+Then verify the user navigate to the login page.............................passed
+And Enter the "Shalini123" and "shalini@123" and clicks on login button.....passed
+]]></system-out>
+</testcase>
+</testsuite>
