@@ -58,8 +58,10 @@ public class shipWithoutAccountStepDefination{
     @Then("verify the {string}  field from the ShipManager lite page")
     public void verifyTheFieldFromTheShipManagerLitePage(String arg0) throws InterruptedException {
         oHomePage=new HomePage();
+        configFileReader=new ConfigFileReader();
+        configFileReader.waitmethod();
         oshipWithoutAccountPage=new ShipWithoutAccountPage();
-        Thread.sleep(3000);
+        configFileReader.waitmethod();
         oshipWithoutAccountPage.countryList("India");
         screenshot=new takeScreenShotUtility();
         screenshot.captureScreenshot(driver,"loginPageafterdata");

@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -30,6 +31,7 @@ public class loginPage {
 
     @FindBy(xpath = "//a[@id='fxg-dropdown-signIn']/span")
     public WebElement getSignInLink;
+
     @FindBy(xpath = "//div[contains(@class,'fxg-dropdown__sub-menu u')]")
     public WebElement signIndropdown;
 
@@ -41,6 +43,18 @@ public class loginPage {
 
     @FindBy(xpath = "//a[@id='createUserId']/span")
     public WebElement userLoginPage_title_text;
+
+    @FindBy(xpath = "//span[contains(text(),' Sign Up/Log In')]")
+    public WebElement userLogin;
+
+    @FindBy(xpath = "//a[contains(text(),'LOG IN')]")
+    public WebElement LoginLink;
+
+    @FindBy(xpath = "//a[@id='createUserId']")
+    public WebElement createUser;
+
+    @FindBy(xpath = "//b[contains(text(),'Login Information')]")
+    public WebElement loginInformation;
 
     @FindBy(xpath = "//input[@id='userId']")
     public WebElement userLogin_inputfield;
@@ -66,12 +80,69 @@ public class loginPage {
     @FindBy(xpath = "//button[@id='retrieve-btn']")
     public WebElement forgotuserIDbutton;
 
-    public void ligin() throws InterruptedException {
+    @FindBy(xpath = "//input[contains(@name,'loginId')]")
+    public WebElement loginUsername;
+
+    @FindBy(xpath = "//input[contains(@name,'password')]")
+    public WebElement loginPassword;
+
+    @FindBy(xpath = "//input[contains(@id,'retypePassword')]")
+    public WebElement loginrePassword;
+
+    @FindBy(xpath = "//select[contains(@name,'reminderQuestion')]")
+    public WebElement selectreminderQuestion;
+
+    @FindBy(xpath = "//input[contains(@id,'reminderAnswer')]")
+    public WebElement reminderAnswer;
+
+    @FindBy(xpath = "//input[@id='firstName']")
+    public WebElement contactFirstName;
+
+    @FindBy(xpath = "//input[@id='lastName']")
+    public WebElement contactLastName;
+
+    @FindBy(xpath = "//input[@id='company']")
+    public WebElement contactCompany;
+
+    @FindBy(xpath = "//select[@name='country']")
+    public WebElement contactCountry;
+
+    @FindBy(xpath = "//input[@name='zip']")
+    public WebElement contactCountryzip;
+
+    @FindBy(xpath = "//input[@name='address1']")
+    public WebElement contactAddress1;
+
+    @FindBy(xpath = "//input[@name='city']")
+    public WebElement contactCity;
+
+    @FindBy(xpath = "//input[@name='state']")
+    public WebElement contactState;
+
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement contactEmail;
+
+    @FindBy(xpath = "//input[@name='retypeEmail']")
+    public WebElement contactretypeEmail;
+
+    @FindBy(xpath = "//input[@name='phone']")
+    public WebElement contactPhone;
+
+    @FindBy(xpath = "//input[@name='cboptin']")
+    public WebElement contactTermsCheck;
+
+    @FindBy(xpath = "//input[@id='iacceptbutton']")
+    public WebElement contactAcceptButton;
+
+
+    public void login() throws InterruptedException {
+        configFileReader=new ConfigFileReader();
         WebDriverWait wait=new WebDriverWait(driver,40);
         wait.until(ExpectedConditions.elementToBeClickable(getSignInLink));
         getSignInLink.click();
-        Thread.sleep(3000);
-      //  signInLink.click();
+        configFileReader.waitmethod();
+        // Thread.sleep(3000);
+        //  signInLink.click();
         wait.until(ExpectedConditions.elementToBeClickable(logInLink));
         logInLink.click();
     }
@@ -94,6 +165,32 @@ public class loginPage {
         log.info(forgotIDTitlefromDOM);
 
     }
+
+    public void selectSecretQuestion() throws IOException {
+        configFileReader= new ConfigFileReader();
+        selectreminderQuestion.click();
+        Select select=new Select(selectreminderQuestion);
+        select.selectByVisibleText("What is your mother's first name?");
+        reminderAnswer.sendKeys(configFileReader.ConfigReaderfile("momName"));
+    }
+
+    public void selectCountry() throws IOException {
+        configFileReader= new ConfigFileReader();
+        contactCountry.click();
+        Select select=new Select(contactCountry);
+        select.selectByVisibleText("India");
+        contactCountryzip.sendKeys(configFileReader.ConfigReaderfile("contactCountryzip"));
+        contactAddress1.sendKeys(configFileReader.ConfigReaderfile("contactAddress1"));
+        contactCity.sendKeys(configFileReader.ConfigReaderfile("contactCity"));
+        contactState.sendKeys(configFileReader.ConfigReaderfile("contactState"));
+        contactEmail.sendKeys(configFileReader.ConfigReaderfile("contactEmail"));
+        contactretypeEmail.sendKeys(configFileReader.ConfigReaderfile("contactretypeEmail"));
+        contactPhone.sendKeys(configFileReader.ConfigReaderfile("contactPhone"));
+        contactTermsCheck.click();
+        contactAcceptButton.click();
+
+    }
+
 
 
 

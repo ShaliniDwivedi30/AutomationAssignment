@@ -30,22 +30,22 @@ public class ShipWithoutAccountPage {
 
     List<WebElement> countryList=driver.findElements(By.xpath("//select[@id='fx-from-country']"));
     public void countryList(String county) throws InterruptedException {
-     for (WebElement CountryList:countryList)
-    {
-        System.out.println();
+        for (WebElement CountryList:countryList)
+        {
+            System.out.println();
 
-        Thread.sleep(50);
-        log.info(CountryList.getText());
-        System.out.println();
-        WebDriverWait wait=new WebDriverWait(driver,60);
-        wait.until(ExpectedConditions.visibilityOfAllElements(CountryList));
-        String countrydetails=CountryList.getText();
-        System.out.println();
-        log.info(countrydetails);
-        Select selectCountryDropdown = new Select(driver.findElement(By.xpath("//select[@id='fx-from-country']")));
-        selectCountryDropdown.selectByVisibleText(county);
+            Thread.sleep(50);
+            log.info(CountryList.getText());
+            System.out.println();
+            WebDriverWait wait=new WebDriverWait(driver,60);
+            wait.until(ExpectedConditions.visibilityOfAllElements(CountryList));
+            String countrydetails=CountryList.getText();
+            System.out.println();
+            log.info(countrydetails);
+            Select selectCountryDropdown = new Select(driver.findElement(By.xpath("//select[@id='fx-from-country']")));
+            selectCountryDropdown.selectByVisibleText(county);
 
-    }}
+        }}
 
 
 }

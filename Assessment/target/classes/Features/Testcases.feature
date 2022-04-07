@@ -2,7 +2,7 @@
 Feature: fedex assessment home page
 
 #  Test case 1 user see the all available services
-@test1
+  @test1
   Scenario Outline: Fedex home page title verification
     Given user launch the fedex url
     Then user will get location modal
@@ -10,18 +10,18 @@ Feature: fedex assessment home page
     Then user will navigate to the fedex "<title>" home page
 
     Examples:
-    |title|
-    |HomePageTitle|
+      |title|
+      |HomePageTitle|
 # Test case 2 user clicks on the shipping services
-@test2
-    Scenario: User checks all available services on the home page
-      Given user launch the fedex url
-      Then user will get location modal
-      When user clicks on english option from the location modal
-      Then verify the all services available on home page
+  @test2
+  Scenario: User checks all available services on the home page
+    Given user launch the fedex url
+    Then user will get location modal
+    When user clicks on english option from the location modal
+    Then verify the all services available on home page
 
  #Test case 3 new user navigate to the login page
-@test3
+  @test3
   Scenario: New user navigate to login from the home page
     Given user launch the fedex url
     Then user will get location modal
@@ -30,7 +30,7 @@ Feature: fedex assessment home page
     And verify the login page details
 
    #Test case 4 new user navigate to the login from the page and enters the login details
-@test4
+  @test4
   Scenario Outline: New user try to login using the user name and password
     Given user launch the fedex url
     Then user will get location modal
@@ -42,7 +42,7 @@ Feature: fedex assessment home page
       |userName|password|
 
   #Test case 5 new user navigate to the login from the page and clicks on the forgot userid link
-@test5
+  @test5
   Scenario: New user try to reset his/her password
     Given user launch the fedex url
     Then user will get location modal
@@ -51,7 +51,7 @@ Feature: fedex assessment home page
     And clicks on the Forgot your user name or password link
 
    #Test case 6 new user navigate to the login from the page and try to reset password
-@test6
+  @test6
   Scenario: New user try to reset his/her user id
     Given user launch the fedex url
     Then user will get location modal
@@ -61,7 +61,7 @@ Feature: fedex assessment home page
     Then user clicks on the reset password CTA and navigate to other page
 
    #Test case 7 new user navigate to the login from the page and try to retrive user id
-@test7
+  @test7
   Scenario: New user New user try to reset his/her userID
     Given user launch the fedex url
     Then user will get location modal
@@ -72,7 +72,7 @@ Feature: fedex assessment home page
     And clicks on the Retrive user ID CTA
 
   # Test case 8 user navigate to the ShipManager lite page validate the url
-@test8
+  @test8
   Scenario Outline: New user ship without account page
     Given user launch the fedex url
     Then user will get location modal
@@ -87,7 +87,7 @@ Feature: fedex assessment home page
 
 
 # Test case 9 user navigate to the ShipManager lite page and enters the details
-@test9
+  @test9
   Scenario Outline: New user is in ship without account page and enter some details
     Given user launch the fedex url
     Then user will get location modal
@@ -100,7 +100,7 @@ Feature: fedex assessment home page
       |Shalini|1188lk |
 
   #Test case 10 user navigate to the ShipManager lite page verification of country from the page
-@test10
+  @test10
   Scenario Outline: New user ship in without account page and enters the country detail
     Given user launch the fedex url
     Then user will get location modal

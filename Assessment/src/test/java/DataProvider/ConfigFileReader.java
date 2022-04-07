@@ -20,10 +20,10 @@ public class ConfigFileReader {
             properties.load(reader);
 
         }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
+        catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
 
     public String ConfigReaderfile(String key) throws IOException {
@@ -55,6 +55,10 @@ public class ConfigFileReader {
         String reportConfigPath = properties.getProperty("reportConfigPath");
         if(reportConfigPath!= null) return reportConfigPath;
         else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");
+    }
+
+    public void waitmethod() throws InterruptedException {
+        Thread.sleep(5000);
     }
 
 
