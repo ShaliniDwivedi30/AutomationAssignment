@@ -1,5 +1,6 @@
 package com.POM_PageObjectModel;
 
+import DataProvider.ConfigFileReader;
 import com.StepDefinations.BaseClass;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -13,12 +14,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
 public class HomePage {
-
+    ConfigFileReader configFileReader;
     public static WebDriver driver=BaseClass.driver;
     Logger log=Logger.getLogger(HomePage.class.getName());
     public HomePage()
-  {
-       PageFactory.initElements(driver, this);
+    {
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//h3[contains(text(),'Choose your location')]")
@@ -72,9 +73,22 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='dropdown section']/li/a/span[contains(text(),'Shipping')]")
     public WebElement Shipping_List_from_loginpage;
 
+    @FindBy(xpath = "//div[@class='fxg-wrapper']/ul/div/li[1]/a/span[contains(text(),'Tracking')]")
+    public WebElement TrackingService;
+
+    @FindBy(xpath = "//input[@id='trackingModuleTrackingNum']")
+    public WebElement TrackingID;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement TrackingSubmit;
+
+    @FindBy(xpath = "//div[@class='notification notification--error']/div[2]")
+    public WebElement TrackingNotification;
+
     public void shippingServicesList() throws InterruptedException {
         servicesList();
-        Thread.sleep(5000);
+        configFileReader=new ConfigFileReader();
+        configFileReader.waitmethod();
         ShippingService.click();
         List<WebElement> Shipping_Services_list = driver.findElements(By.xpath("//li[contains(@class,'fxg-dropdown__item fxg-dropdown__item--open')]/div"));
         WebDriverWait wait=new WebDriverWait(driver,60);
@@ -82,8 +96,7 @@ public class HomePage {
         for (WebElement shippingerviceList:Shipping_Services_list)
         {
             System.out.println();
-
-            Thread.sleep(50);
+            configFileReader.waitmethod();
             log.info(shippingerviceList.getText());
             System.out.println();
             System.out.println(shippingerviceList.getText());
@@ -115,14 +128,15 @@ public class HomePage {
     }
     public void shippingServicesListfromloginpage() throws InterruptedException {
 
-        Thread.sleep(5000);
+        configFileReader=new ConfigFileReader();
+        configFileReader.waitmethod();
         List<WebElement> Shipping_Services_list = driver.findElements(By.xpath("//li[contains(@class,'fxg-dropdown__item fxg-dropdown__item--open')]/div"));
         WebDriverWait wait=new WebDriverWait(driver,60);
         wait.until(ExpectedConditions.visibilityOfAllElements(Shipping_Services_list));
         for (WebElement shippingerviceList:Shipping_Services_list) {
             System.out.println();
 
-            Thread.sleep(50);
+            configFileReader.waitmethod();
             log.info(shippingerviceList.getText());
             System.out.println();
             System.out.println(shippingerviceList.getText());
@@ -152,6 +166,27 @@ public class HomePage {
             log.info(serviceList.getText());
             wait.until(ExpectedConditions.elementToBeClickable(ShippingService));
             ShippingService.click();
+
+        }
+    }
+
+    public void trackingService(String trackID ) throws InterruptedException {
+        configFileReader= new ConfigFileReader();
+        configFileReader.waitmethod();
+        List<WebElement> Services_list = driver.findElements(By.xpath("//div[@class='fxg-wrapper']/ul"));
+        WebDriverWait wait=new WebDriverWait(driver,60);
+        wait.until(ExpectedConditions.visibilityOfAllElements(Services_list));
+        for (WebElement serviceList:Services_list)
+        {
+            System.out.println(serviceList.getText());
+            log.info(serviceList.getText());
+            wait.until(ExpectedConditions.elementToBeClickable(TrackingService));
+            TrackingService.click();
+            configFileReader.waitmethod();
+            TrackingID.sendKeys(trackID);
+            TrackingSubmit.click();
+            System.out.println(driver.getTitle());
+            configFileReader.waitmethod();
 
         }
     }

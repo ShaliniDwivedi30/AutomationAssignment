@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="71.28">
-<testcase classname="fedex assessment regression feature" name="Fedex home page title verification" time="70.88">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="127.814">
+<testcase classname="fedex assessment regression feature" name="Fedex home page title verification" time="127.475">
 <system-out><![CDATA[Given user launch the fedex url.............................................passed
 Then user will get location modal...........................................passed
 When user clicks on english option from the location modal..................passed
 Then user will navigate to the fedex "HomePageTitle" home page..............passed
 Then verify the all services available on home page.........................passed
-Then verify the user navigate to the login page.............................passed
-And verify the login page details...........................................passed
+And clicks on the Tracking service and enters the "trackID".................passed
+And clicks on the signIn CTA and verify the user navigate to the login page.passed
+When user clicks on create a user id for an existing account................passed
+Then user will navigate to the login registration page......................passed
+And fills the required details..............................................passed
 And Enter the "userName" and "password" and clicks on login button..........passed
 And clicks on the Forgot your user name or password link....................passed
 Then user clicks on the reset password CTA and navigate to other page.......passed
