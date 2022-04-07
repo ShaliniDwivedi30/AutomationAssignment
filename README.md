@@ -19,12 +19,13 @@ Assignment Test Cases:
 # Test case 1 : user see the all available services
 # Test case 2 : user clicks on the shipping services
 # Test case 3 : new user navigate to the login page
-# Test case 4 : new user navigate to the login from the page and enters the login details
-# Test case 5 : new user navigate to the login from the page and clicks on the forgot userid link	
-# Test case 6 : new user navigate to the login from the page and try to reset password
-# Test case 7 : new user navigate to the login from the page and try to retrieve user id
-# Test case 8 : user navigate to the ShipManager lite page validate the url
-# Test case 9 : user navigate to the ShipManager lite page and enters the details
-# Test case 10: user navigate to the ShipManager lite page verification of country from the page
+# Test case 4 : new user creates an account from the login page
+# Test case 5 : new user navigate to the login from the page and enters the login details
+# Test case 6 : new user navigate to the login from the page and clicks on the forgot userid link	
+# Test case 7 : new user navigate to the login from the page and try to reset password
+# Test case 8 : new user navigate to the login from the page and try to retrieve user id
+# Test case 9 : user navigate to the ShipManager lite page validate the url
+# Test case 10 : user navigate to the ShipManager lite page and enters the details
+# Test case 11: user navigate to the ShipManager lite page verification of country from the page
 
 Reports can be find in the targets/Reports section 
